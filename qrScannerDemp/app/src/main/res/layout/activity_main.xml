@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        tools:context=".MainActivity"
+android:orientation="vertical">
+
+
+
+    <TextView
+            android:text="Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/namet"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="name"
+            android:ems="10"
+            android:id="@+id/name"/>
+
+    <TextView
+            android:text="Gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gendert"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="gender"
+            android:ems="10"
+            android:id="@+id/gender"/>
+    <TextView
+            android:text="UID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/uid1t"
+    />
+<RelativeLayout android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               >
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="uid"
+            android:ems="10"
+            android:id="@+id/uid"/>
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="scan"
+            android:id="@+id/btn_scan"
+            android:src="@drawable/camera"
+            android:layout_marginRight="0dp"/>
+</RelativeLayout>
+
+
+    <TextView
+            android:text="address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addresst"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="address"
+            android:ems="10"
+            android:id="@+id/address"/>
+
+    <TextView
+            android:text="Pincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pincodet"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="pincode"
+            android:ems="10"
+            android:id="@+id/pincode"/>
+    <TextView
+            android:text="Dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dobt"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="dob"
+            android:ems="10"
+            android:id="@+id/dob"/>
+    <TextView
+            android:text="URL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/urlt"/>
+
+
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="http://192.168.43.200:8080/"
+            android:ems="10"
+            android:id="@+id/url"
+            android:src="@drawable/rounded_corner"/>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+android:layout_gravity="center" android:text="submit" android:id="@+id/submit"/>
+
+
+
+
+</LinearLayout>

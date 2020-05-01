@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "615703807244",
+    "firebase_url": "https://qrscannerdemp.firebaseio.com",
+    "project_id": "qrscannerdemp",
+    "storage_bucket": "qrscannerdemp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615703807244:android:a4453fd4efabd3da",
+        "android_client_info": {
+          "package_name": "com.saumyar.qrScannerDemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "615703807244-7adeakasmsqqvkqi2m1t2r7on62q6ocj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.saumyar.qrScannerDemo",
+            "certificate_hash": "0395458f168b81fa3ecbed9f062f16bd6f489108"
+          }
+        },
+        {
+          "client_id": "615703807244-jv25pc4ddas40ecr685ebl4ugfvd1t51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk0jbanHh7IylplxegjdAdlzsQRGV4pdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "615703807244-jv25pc4ddas40ecr685ebl4ugfvd1t51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
