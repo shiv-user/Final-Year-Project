@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load crispy_forms_tags %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'account/support.css' %}" type="text/css"/>
+        <title>Support</title>
+    </head>
+    <body>
+     <div class="header">
+      <div class="inner_header">
+        <div class="logo">
+        </div>
+        {% if not user.is_authenticated %}
+        <div class="login">
+            <a href="{% url 'login' %}"><li>Login</li></a>
+        </div>
+        {% else %}
+        <div class="login">
+            <a href="{% url 'logout' %}"><li>Logout</li></a>
+        </div>
+        {% endif %}
+        <div class="innerhead">
+          <ul class="nav">
+            <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+            <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+            <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+          </ul>
+        </div>
+        </div>
+     </div>
+       <div class="wrapper">
+         <h1>Support</h1>
+         <h2>1.	A guide to website:</h2>
+         <p>Our website provides an easy and better way to keep track of all the entries of an outsider or any visitor. We directly save data to the Database for safe work. We can generate a report when there is a need.
+           The first page is our home page. The receptionist has to log in before registration, so automatically the "register" button direct to the login page. After login, the receptionist dashboard will open which have two buttons: register and search. Register button will direct to a registration page to register a new visitor while the search button will be used for update and delete.
+           There is also an admin login which redirects to the admin dashboard after login. It contains many buttons including "Generate report", "create new admin", "create new receptionist" and "change password".
+           "Generate report" will generate the report based on selected entities (i.e., Date, Name, Number of visits). "Create new admin" will create the new admin and new receptionist as in "create new receptionist". "Change password" will change the password. Only admin has the right to create new admin/receptionist.
+         </p>
+         <h2>2.	Reset/Change/Forgot password:</h2>
+         <p>In case of reset/change the password, the admin can directly do it through the admin's dashboard. But in case of forgot password, the user must remember the email id which was given at the time of registration. The email is sent to that id to recover the password.</p>
+         <h2>3.	Delete data:</h2>
+         <p>The data of a visitor can be deleted easily by the receptionist using the "search" button on the receptionist dashboard. This button will search the visitor whose data is to be deleted, this will direct to the registration page which will be auto-filled and by the use of the "delete" button, the data can be deleted.</p>
+         <h2>4.	Create Admin/Receptionist:</h2>
+         <p>Only admin has the right to create new admin or receptionist. We have the "create new admin" and "create new receptionist" buttons on the admin's dashboard.</p>
+       </div>
+    </body>
+</html>

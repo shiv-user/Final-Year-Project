@@ -1,0 +1,310 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+html {
+    background: url(temp.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+
+body{
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background:white;
+    box-shadow: 0px 0px 10px 0px #ADADAD;
+}
+
+.login{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    height: 100%;
+    display: table-cell;
+    float: right;
+    color: #008AF3;
+    padding-top: 3%;
+    padding-right: 4%;
+}
+
+.login a{
+    display: table;
+    float: right;
+    vertical-align: middle;
+}
+
+.inner_header{
+    width: 1060px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.innerhead{
+    width:750px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 100%;
+    display: table-cell;
+    float: left;
+    position: relative;
+    vertical-align: middle;
+}
+
+.logo img{
+    position: absolute;
+    display: table;
+    margin-top: -25px;
+    margin-left: -40px;
+}
+.nav{
+    float: right;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 25px 0px;
+    text-align: center;
+}
+
+.nav a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: #353535;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.nav a:last-child{
+    padding-right: 80px;
+}
+
+.wrapper{
+
+}
+
+.scene{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.scene .box{
+  height: 400px;
+  width: 500px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+}
+
+.box h1{
+  margin-top: 60px;
+  text-align: right;
+  margin-right: 100px;
+  font-family: hobo-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #E28839;
+}
+
+.box h3{
+  margin-top: 10px;
+  text-align: center;
+  color: #E0E0E0;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+.box p{
+  margin-top: 80px;
+  text-align: center;
+  color: #E0E0E0;
+  opacity: 0.7;
+  font-size: 15px;
+}
+
+.box button{
+  margin-top: 40px;
+  margin-left: 180px;
+  width: 120px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #008AF3;
+  border: none;
+  text-align: center;
+}
+
+.box a{
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #fff;
+  padding: 10px;
+  letter-spacing: 2px;
+}
+
+.box button:hover{
+  background-color: #005799;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.scene img{
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+.footer{
+  height: 230px;
+  width: 100%;
+  background-color: #2C2C2C;
+}
+
+.footer .content{
+  width: 33.33%;
+  height: 230px;
+  float: left;
+}
+
+.content #contact-info{
+  margin-left: 40%;
+  margin-top: 30px;
+  color: #E0E0E0;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+#contact-info p{
+  font-size: 10px;
+}
+
+.content #contact-info h5{
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.content #contact-info p{
+  margin-top: 10px;
+}
+
+#contact-info a{
+  text-decoration: none;
+  color: #E0E0E0;
+}
+
+#contact-info .smlogo{
+  display: block;
+  margin-top: 10px;
+}
+
+.smlogo img{
+  height: 30px;
+  width: 30px;
+}
+
+.last-div #left-div{
+  width: 50%;
+  height: 40px;
+  background-color: #050505;
+  float: left;
+}
+
+.last-div #right-div{
+  width: 50%;
+  height: 40px;
+  background-color: #050505;
+  float: right;
+}
+
+#left-div ul{
+  list-style: none;
+  float: left;
+  margin-left: 50px;
+}
+
+#left-div ul li{
+  display: inline-block;
+  color: #E0E0E0;
+  opacity: 0.7;
+  font-size: 8px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+#right-div p{
+  color: #E0E0E0;
+  opacity: 0.7;
+  font-size: 8px;
+  text-align: right;
+  margin-right: 50px;
+  padding: 10px;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width:1600px){
+  .scene .box{
+    height: 550px;
+    width: 700px;
+    top: 200px;
+  }
+
+  .box h1{
+    margin-top: 40px;
+    font-size: 54px;
+  }
+
+  .box h3{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 22px;
+    margin-left: 27px;
+    margin-right: 24px;
+
+  }
+
+  .box p{
+    margin-top: 90px;
+    font-size: 22px;
+    margin-left: 30px;
+  }
+
+  .box button{
+    margin-top: 100px;
+    margin-left: 260px;
+    width: 180px;
+    height: 60px;
+    border-radius: 7px;
+  }
+
+  .box a{
+    font-size: 18px;
+    padding: 15px;
+  }
+}

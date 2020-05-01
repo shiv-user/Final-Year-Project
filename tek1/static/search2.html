@@ -1,0 +1,202 @@
+{% load staticfiles %}
+ <!DOCTYPE html>
+  <html lang="en">
+      <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="./style.css" />
+          <title>Template</title>
+          <style >
+             * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    background: url(temp.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+
+
+.header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background:white;
+    box-shadow: 0px 0px 10px 0px #ADADAD;
+    overflow: auto;
+}
+
+.login{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    height: 100%;
+    display: table-cell;
+    float: right;
+    color: #008AF3;
+    padding-top: 3%;
+    padding-right: 4%;
+}
+
+.login a{
+    display: table;
+    float: right;
+    vertical-align: middle;
+}
+
+.inner_header{
+    width: 1060px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.innerhead{
+    width:750px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+  
+.logo {
+    height: 100%;
+    display: table-cell;
+    float: left;
+    vertical-align: middle;
+}
+
+.logo img{
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -40px;
+}
+.nav{
+    float: right;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 25px 0px;
+    text-align: center;
+}
+
+.nav a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: #353535;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+.nav a:last-child{
+    padding-right: 80px;
+}
+
+.loginbox{
+    border-radius: 10px;
+    width: 430px;
+    height: 440px;
+    background-color: white;
+    position: relative;
+    top: 90px;
+    left: 450px;
+  margin-bottom:190px;
+  margin-top: -50px;
+}
+
+.loginheader{
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+    width: 100%;
+    height: 35px;
+    background-color: black;
+    text-align: center;
+    text-emphasis-color: white;
+  
+}
+
+.mainlogin{
+    padding: 25px 40px;
+    margin: 0px;
+}
+
+#adm{
+    padding: 7px;
+}
+
+.mainlogin input[type="submit"]
+{
+    border-radius: 3px;
+  border:none;
+    margin: 1px 140px;
+    color: white;
+    background-color: #0006ffba;
+    width: 90px;
+    height: 25px;
+}
+ @media screen and (min-width:1600px)
+ {
+   
+   .loginbox{
+    border-radius: 10px;
+    width: 430px;
+    height: 440px;
+    background-color: white;
+    position: relative;
+    top: 150px;
+    left: 750px;
+  margin-bottom:190px;
+  margin-top: -50px;
+}
+
+ }
+  </style>
+      </head>
+      <body>
+               <div class="header">
+        <div class="inner_header">
+          <div class="logo">
+          </div>
+          <div class="login">
+              <a><li>Login</li></a>
+          </div>
+          <div class="innerhead">
+            <ul class="nav">
+              <a><li>Home</li></a>
+              <a><li>About us</li></a>
+              <a><li>Support</li></a>
+            </ul>
+          </div>
+          </div>
+       </div>
+          <div class="loginbox">
+          <div class="loginheader">
+             <p id="adm">REGISTRATION FORM</p> 
+          </div>
+          <div class="mainlogin">
+<form method="POST" >
+    {% csrf_token %}
+    {% for field in form %}
+        <span style="margin: 0px 0px 20px 97px; height:22px;  width: 200px; border-radius: 3px; border:none; background-color:#D3D3D3;">{{ field.label_tag }}: {{ field }}</span><br>
+    {% endfor %}
+
+    <input type="submit" name="submit" value="Add Task" class ="btn btn-primary" style="margin: 0px 0px 20px 97px; height:22px;  width: 200px; border-radius: 3px; border:none; background-color:#D3D3D3;" / >
+</form>
+</div>
+</div>
+  
+</body>
+</html>

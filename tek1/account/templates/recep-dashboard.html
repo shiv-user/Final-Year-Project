@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'account/recep-dashboard.css' %}" type="text/css"/>
+        <title>Receptionist Dashboard</title>
+        <style>
+        body{
+          background-image: url({% static "Group31.png"%});
+          background-size: cover;
+        }
+          .box{
+            height: 100px;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+          }
+
+          .box a{
+            display: inline-block;
+            text-decoration: none;
+            height: 50px;
+            width: 200px;
+            color: black;
+            background-color: #D3D3D3;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 19px;
+            padding:15px;
+            font-family: Arial;
+          }
+
+          .box #inp{
+            height: 50px;
+            width: 200px;
+            border: none;
+            border-radius: 30px;
+            background-color: #D3D3D3;
+            text-align: center;
+            outline: none;
+          }
+
+        </style>
+    </head>
+    <body>
+
+     <div class="header">
+      <div class="inner_header">
+        <div class="logo">
+        </div>
+        {% if not user.is_authenticated %}
+        <div class="login">
+            <a href="{% url 'login' %}"><li>Login</li></a>
+        </div>
+        {% else %}
+        <div class="login">
+            <a href="{% url 'logout' %}"><li>Logout</li></a>
+        </div>
+        {% endif %}
+        <div class="innerhead">
+          <ul class="nav">
+            <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+            <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+            <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+          </ul>
+        </div>
+        </div>
+     </div>
+{% load crispy_forms_tags %}
+        <br><br>
+        <div class="box">
+        <a href="{% url 'account_app:display'%}">Register</a>
+        <br><br>
+        <form action="{% url 'account_app:search_results' %}" method="get">
+          {% csrf_token %}
+          <input id="inp" name="q" type="text" placeholder="Phone no.">
+        </form></div>
+</body>
+</html>

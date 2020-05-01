@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'account/style.css' %}" type="text/css"/>
+        <title>{{ user_type }} LOGIN</title>
+        <style>
+        .loginbox{
+            border-radius: 10px;
+            width: 500px;
+            height: 400px;
+            background-color: white;
+            margin: 50px auto;
+        }
+        .mainlogin input[type="submit"]
+        {
+            border-radius: 5px;
+            color: white;
+            background-color: #0006ffba;
+            width: 150px;
+            height: 35px;
+            position: relative;
+            left: 30%;
+            top: 15px;
+            font-size: 14px;
+        }
+        </style>
+    </head>
+    <body>
+
+     <div class="header">
+      <div class="inner_header">
+        <div class="logo">
+            <img src="{% static 'account/#.png' %}" height="135">
+        </div>
+        {% if not user.is_authenticated %}
+        <div class="login">
+            <a href="{% url 'login' %}"><li>Login</li></a>
+        </div>
+        {% else %}
+        <div class="login">
+            <a href="{% url 'logout' %}"><li>Logout</li></a>
+        </div>
+        {% endif %}
+        <div class="innerhead">
+          <ul class="nav">
+            <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+            <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+            <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+          </ul>
+        </div>
+        </div>
+     </div>
+{% load crispy_forms_tags %}
+      <div class="form-container">
+         <div class="row">
+             <div class="col-12">
+                <div class="loginbox">
+                    <div class="loginheader">
+                       <p id="adm">CREATE {{ user_type }}</p>
+                    </div>
+                    <div class="mainlogin">
+                      <form method="post">
+                        {% csrf_token %}
+                        {{ form.username|as_crispy_field }}<br>
+                        {{ form.email|as_crispy_field }}<br>
+                        {{ form.password1|as_crispy_field }}<br>
+                        {{ form.password2|as_crispy_field }}<br>
+                        <input type="submit">
+                      </form>
+                    </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+</body>
+</html>
+
+<!-- Name{{ form.username|as_crispy_field }}<br>
+Email{{ form.email|as_crispy_field }}<br>
+Password{{ form.password1|as_crispy_field }}<br>
+Confirm Password{{ form.password2|as_crispy_field }}<br> -->

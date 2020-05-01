@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+  <html lang="en">
+	{% load static %}
+      <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+          <title>Generate Report</title>
+          <style>
+          		* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    background: url({% static "account/temp.png" %}) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+
+.header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background:white;
+    box-shadow: 0px 0px 10px 0px #ADADAD;
+    overflow: auto;
+}
+
+.login{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    height: 100%;
+    display: table-cell;
+    float: right;
+    color: #008AF3;
+    padding-top: 3%;
+    padding-right: 4%;
+}
+
+.login a{
+    display: table;
+    float: right;
+    vertical-align: middle;
+}
+
+.inner_header{
+    width: 1060px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.innerhead{
+    width:750px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 100%;
+    display: table-cell;
+    float: left;
+    vertical-align: middle;
+}
+
+.logo img{
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -40px;
+}
+.nav{
+    float: right;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 25px 0px;
+    text-align: center;
+}
+
+.nav a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: #353535;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+.nav a:last-child{
+    padding-right: 80px;
+}
+
+
+.container{
+    background: #fff;
+    width: 500px;
+    height: 400px;
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.para{
+    background-color: #1E1E1E;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 15px 0px 15px 0px;
+    margin-bottom: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    height: 58px;
+}
+
+
+
+.lables{
+    display: block;
+    margin-left: 20px;
+    margin-right: 50px;
+
+    color: #2C2C2C;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    padding: 5px 0 0 0;
+    display: inline-block;
+    text-align: right;
+    line-height: 20px;
+}
+
+.table{
+   margin: 0px auto;
+
+}
+.input{
+    padding: 20px;
+}
+
+input[type=date]{
+  float: left;
+  width: 280px;
+  padding: 10px;
+  margin: 10px;
+  display: block;
+  border-radius: 6px;
+  border: none;
+  background-color: #E5E5E5;
+
+}
+
+input[type=text],input[type=number]{
+    float: right;
+    width: 280px;
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    border-radius: 6px;
+    border: none;
+    background-color: #E5E5E5;
+
+}
+
+input[type=submit]{
+    position: absolute;
+    left:45%;
+    width: 100px;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    background-color: #008AF3;
+    color: #fff;
+    margin: 40px;
+}
+          </style>
+      </head>
+      <body>
+
+       <div class="header">
+        <div class="inner_header">
+					<div class="logo">
+	        </div>
+          {% if not user.is_authenticated %}
+          <div class="login">
+              <a href="{% url 'login' %}"><li>Login</li></a>
+          </div>
+          {% else %}
+          <div class="login">
+              <a href="{% url 'logout' %}"><li>Logout</li></a>
+          </div>
+          {% endif %}
+	        <div class="innerhead">
+	          <ul class="nav">
+	            <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+	            <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+	            <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+	          </ul>
+          </div>
+          </div>
+       </div>
+
+       <div class="container">
+          <form action="{% url 'account_app:search_result' %}",method="get">
+            <p class="para">GENERATE REPORT</p>
+            <table class="table">
+                <tr class="row">
+                    <td>
+                        <lable class="lables">Name</lable>
+                    </td>
+                    <td>
+                        <input type="text" class="input" name="name">
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <lable class="lables">Date</lable>
+                    </td>
+                    <td style="width:200px;">
+                        <input type="date" class="input1" name="dat1" required style="width:130px; float:left;">
+                    </td>
+                    <td>
+                      <input type="date" id="d2" class="input2" name="dat2" required style="width: 130px;
+                      right: 150px;
+                      position: relative;
+                      padding: 10px;
+                      margin: 10px;
+                      display: block;">
+
+                  </td>
+                </tr>
+                <tr class="row">
+                    <td></td>
+                    <td>
+                        <input type="submit" class="submit" value="Generate">
+                    </td>
+                </tr>
+            </table>
+          </form>
+      </div>
+
+
+      </body>
+  </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'account/receptionist_login.css' %}" type="text/css"/>
+        <title>LOGIN</title>
+    </head>
+    <body>
+
+     <div class="header">
+      <div class="inner_header">
+        <div class="logo">
+        </div>
+        {% if not user.is_authenticated %}
+        <div class="login">
+            <a href="{% url 'login' %}"><li>Login</li></a>
+        </div>
+        {% else %}
+        <div class="login">
+            <a href="{% url 'logout' %}"><li>Logout</li></a>
+        </div>
+        {% endif %}
+        <div class="innerhead">
+          <ul class="nav">
+            <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+            <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+            <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+          </ul>
+        </div>
+        </div>
+     </div>
+{% load crispy_forms_tags %}
+
+
+<div class="wrapper">
+   <div class="receptionist-login-box">
+     <div class="left-login-box">
+       <img id="admin-image" src="{% static 'account/admin.png' %}" alt="no image">
+    </div>
+     <div class="right-login-box">
+       <form class="admin_login_form" method="post">
+         {% csrf_token %}
+         <h1>{{ user_type }} LOGIN</h1>
+         {{ form.username|as_crispy_field }}<br>
+         <!-- <img class="icon key" src="{% static 'account/key.png' %}" alt=""> -->
+         {{ form.password|as_crispy_field }}<br>
+         <!-- <img class="icon lock" src="{% static 'account/lock.png' %}" alt=""> -->
+         {% if form.errors %}
+             <p class=" label label-danger">
+                 Your username and password didn't match.
+                 Please try again.
+             </p>
+         {% endif %}
+         <input type="submit" value="Login">
+         <p>Forgot password?<a href="{% url 'password_reset' %}">Click here</a></p>
+       </form>
+
+     </div>
+   </div>
+ </div>
+  </body>
+</html>

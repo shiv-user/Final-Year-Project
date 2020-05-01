@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'landing_asset/landing_page.css' %}" type="text/css"/>
+        <link rel="stylesheet" href="https://use.typekit.net/ibt0unw.css">
+        <title>Front Desk Assistant</title>
+    </head>
+    <body>
+      <div class="wrapper">
+        <div class="main">
+          <div class="header">
+            <div class="inner_header">
+              <div class="logo">
+               
+              </div>
+              <div class="logo">
+                              </div>
+              {% if not user.is_authenticated %}
+              <div class="login">
+                  <a href="{% url 'login' %}"><li>Login</li></a>
+              </div>
+              {% else %}
+              <div class="login">
+                  <a href="{% url 'logout' %}"><li>Logout</li></a>
+              </div>
+              {% endif %}
+              <div class="innerhead">
+                <ul class="nav">
+                  <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+                  <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+                  <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+                </ul>
+              </div>
+            </div>
+          </div>
+         </div>
+         <div class="scene">
+           <img src="{% static 'landing_asset/bg.png' %}" alt="">
+           <div class="box">
+             <h1>Front Disk Assistant</h1>
+             <h3>An automated Visitor Management System</h3>
+             <p>With XYZ's Front Desk Assistant, visitor check-ins become fully automated and totally transparent</p>
+            <button type="button"><a href="{% url 'account_app:display' %}">Register</a></button>
+           </div>
+         </div>
+         <div class="footer">
+           <div class="content">
+             <div id="contact-info">
+               <h5>Contact us</h5>
+               <h5>Office</h5>
+               <p>Campus-1, 19th KM stone, NH 24, Ghaziabad, <br>Uttar Pradesh 201009 <br>Phone: 1234567890 </p>
+               <h5>E-mail</h5>
+               <p>wecare@XYZti.com</p>
+             </div>
+           </div>
+           <div class="content">
+             <div id="contact-info">
+               <h5><a href="{% url 'account_app:team' %}">Our team</a></h5>
+               <h5>f.a.q.</h5>
+               <p>How to buy the product?</p>
+               <p>Where to buy?</p>
+             </div>
+           </div>
+           <div class="content">
+             <div id="contact-info">
+               <h5>Follow us</h5>
+                <a class="smlogo" href="https://www.instagram.com/"><img src="{% static 'landing_asset/insta_logo.png' %}" alt=""></a>
+                <a class="smlogo" href="https://www.facebook.com/"><img src="{% static 'landing_asset/fb_logo.png' %}" alt=""></a>
+                <a class="smlogo" href="https://www.twitter.com/"><img src="{% static 'landing_asset/twitter_logo.png' %}" alt=""></a>
+             </div>
+           </div>
+         </div>
+         <div class="last-div">
+           <div id="left-div">
+             <ul>
+               <li>Privacy policy</li>
+               <li>Terms of services</li>
+             </ul>
+           </div>
+           <div id="right-div">
+             <p>&copy WWW.XYZTI.COM ALL RIGHT RESERVED</p>
+           </div>
+         </div>
+
+
+       </div>
+    </body>
+</html>

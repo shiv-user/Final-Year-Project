@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    background: url(temp.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+
+body{
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.header{
+    width: 100%;
+    height: 80px;
+    display: block;
+    background:white;
+    box-shadow: 0px 0px 10px 0px #ADADAD;
+    position: fixed;
+}
+
+.login{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    height: 100%;
+    display: table-cell;
+    float: right;
+    color: #008AF3;
+    padding-top: 3%;
+    padding-right: 4%;
+}
+
+.login a{
+    display: table;
+    float: right;
+    vertical-align: middle;
+}
+
+.inner_header{
+    width: 1060px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.innerhead{
+    width:750px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 100%;
+    display: table-cell;
+    float: left;
+    vertical-align: middle;
+}
+
+.logo img{
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -40px;
+}
+.nav{
+    float: right;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 25px 0px;
+    text-align: center;
+}
+
+.nav a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: #353535;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.nav a:last-child{
+    padding-right: 80px;
+}
+
+.wrapper{
+  width: 80%;
+  border-radius: 8px;
+  margin: 110px auto 60px;
+  font-family: sans-serif;
+  text-align: justify;
+  padding: 5px;
+  box-shadow: 0px 0px 15px 0px #ADADAD;
+  background-color: #fff;
+}
+
+.wrapper h1{
+  margin: 20px 20px 30px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+.wrapper h2{
+  margin: 20px;
+  letter-spacing: 1px;
+}
+
+.wrapper p{
+  margin: 45px 45px 45px 53px;
+  line-height: 25px;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'account/admin-dashboard.css' %}" type="text/css"/>
+        <style>
+        .header{
+          overflow: hidden;
+        }
+        </style>
+        <title>Admin Dashboard</title>
+    </head>
+    <body>
+
+     <div class="header">
+      <div class="inner_header">
+        <div class="logo">
+      </div>
+      {% if not user.is_authenticated %}
+      <div class="login">
+          <a href="{% url 'login' %}"><li>Login</li></a>
+      </div>
+      {% else %}
+      <div class="login">
+          <a href="{% url 'logout' %}"><li>Logout</li></a>
+      </div>
+      {% endif %}
+      <div class="innerhead">
+        <ul class="nav">
+          <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+          <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+          <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+        </ul>
+        </div>
+        </div>
+     </div>
+     <div class="container">
+       <div id="images" class="splitleft">
+
+          <p class="dash">DASHBOARD</p>
+          <img src="{% static 'account/statistics.png' %}"><button class="btn" style="color: rgb(99, 98, 98)"><a href="{% url 'account_app:download' %}"><b><h3>Generate Report</h3></b></a></button><br>
+          <img src="{% static 'account/key-silhouette-security-tool-interface-symbol-of-password.png' %}"><button class="btn" style="color: rgb(99, 98, 98)"><a href="{% url 'account_app:admin_signup' %}"><b><h3>Create New Admin</b></a></h3></button><br>
+          <img src="{% static 'account/new-user.png' %}"><button class="btn" style="color: rgb(99, 98, 98)"><a href="{% url 'account_app:recep_signup' %}"><b><h3>Create New Receptionist</b></h3></a></button><br>
+          <img src="{% static 'account/lock.png' %}"><button class="btn" style="color: rgb(99, 98, 98)"><a href="/password/"><b><h3>Change Password</b></h3></a></button><br>
+      </div>
+      <div class="splitright">
+          <img src="{% static 'account/Group32.png' %}" alt="no bg" width="100%" height="90%">
+          <h2 class="para">Welcome to Admin Dashboard</h2>
+      </div>
+     </div>
+    </body>
+</html>

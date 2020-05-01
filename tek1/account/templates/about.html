@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'account/about.css' %}" type="text/css"/>
+        <title>About</title>
+    </head>
+    <body>
+     <div class="header">
+      <div class="inner_header">
+        <div class="logo">
+         
+        </div>
+        {% if not user.is_authenticated %}
+        <div class="login">
+            <a href="{% url 'login' %}"><li>Login</li></a>
+        </div>
+        {% else %}
+        <div class="login">
+            <a href="{% url 'logout' %}"><li>Logout</li></a>
+        </div>
+        {% endif %}
+        <div class="innerhead">
+          <ul class="nav">
+            <a href="{% url 'account_app:home' %}"><li>Home</li></a>
+            <a href="{% url 'account_app:about' %}"><li>About us</li></a>
+            <a href="{% url 'account_app:support' %}"><li>Support</li></a>
+          </ul>
+        </div>
+        </div>
+     </div>
+       <div class="wrapper">
+         <h1>About</h1>
+         <h2>1.	Instant Registration using UID:</h2>
+         <p>Through this web application, it becomes very easy to keep track of all the visitors. It can instantly register the visitor using UID. The receptionist can easily register any visitor and also update the entries of the old visitor.
+         </p>
+         <h2>2.	Hassle-free check-ins:</h2>
+         <p>The visitor check-ins become very easy and hassle-free. Even the registration form will be auto-filled using the data which was previously scanned by android phones using Aadhar Card. Only a few entries have to be manually written. If the visitor does not have the Aadhar Card (have any other id proof), the whole data can be manually filled.</p>
+         <h2>3.	Generate various kinds of reports:</h2>
+         <p>Sometimes the record of any visitor may be required for any purpose or the record of particular dates. So the admin in here can generate the reports in the required way using the data stored in the database. The reports can be generated based on three entities "Name", "Date" and "Number of visits".</p>
+         <h2>4.	Prevent Re-registration:</h2>
+         <p>If a visitor is already registered or he is visiting more than one time to us, then the system automatically prevent the re-registration by fetching the details from database by using phone number and fill the details in registration form.</p>
+       </div>
+    </body>
+</html>

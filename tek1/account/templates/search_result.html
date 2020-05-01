@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Search Results</h1>
+  {% for event in object_list %}
+     {{event.date}} 
+     , {{ event.name }} ,  , {{event.uid}} , {{event.email}} , {{event.phone}}
+  
+  {% endfor %}
+
+{% endblock %}
