@@ -10,5 +10,5 @@ pytz==2018.9
 setuptools==40.6.2 
 sqlparse==0.2.4  
 unicodecsv==0.14.1
-wheel==0.32.3 
+wheel==0.38.1 
 psycopg2>=2.7,<3.0
